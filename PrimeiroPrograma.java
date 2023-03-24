@@ -1,13 +1,13 @@
-import java.util.Scanner;
+import java.util.Scanner; //importar o scanner
 
 public class ConversorTemperatura {
 
-    public static void main(String[] args) {
-        int opcao = 0;
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) { //o main recebe diretamente os args, que é um String
+        int opcao = 0; //inicializa a opção
+        Scanner sc = new Scanner(System.in); //instancia um scanner
 
-        if (args.length > 0) {
-            opcao = Integer.parseInt(args[0]);
+        if (args.length > 0) {//se tem um argumento 
+            opcao = Integer.parseInt(args[0]); //ele vira um valor inteiro
         } else {
             System.out.println("Digite o número da opção desejada:");
             System.out.println("1 - Celsius para Fahrenheit");
@@ -16,13 +16,13 @@ public class ConversorTemperatura {
             System.out.println("4 - Kelvin para Celsius");
             System.out.println("5 - Kelvin para Fahrenheit");
 
-            opcao = sc.nextInt();
+            opcao = sc.nextInt(); //salva o próximo inteiro em opcao
         }
 
-        System.out.println("Digite a temperatura a ser convertida:");
+        System.out.println("Digite a temperatura a ser convertida:"); //printa e salva o próximo double
         double temperatura = sc.nextDouble();
 
-        switch (opcao) {
+        switch (opcao) { //abre um switch: cria a nova temp, printa e break
             case 1:
                 double fahrenheit = (temperatura * 1.8) + 32;
                 System.out.println("A temperatura em Fahrenheit é: " + fahrenheit);
@@ -48,11 +48,11 @@ public class ConversorTemperatura {
                 System.out.println("A temperatura em Fahrenheit é: " + fahrenheit2);
                 break;
 
-            default:
+            default: //caso não dê, quebra
                 System.out.println("Opção inválida!");
                 break;
         }
 
-        sc.close();
+        sc.close(); //fecha o scanner.
     }
 }
